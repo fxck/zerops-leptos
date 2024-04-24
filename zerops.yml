@@ -18,14 +18,20 @@ zerops:
 
       # build your application
       buildCommands:
-        - cargo build
-        - cargo install cargo-leptos
+        - cargo build --verbose
+        - ls -la
         - rustup target add wasm32-unknown-unknown
-        - cargo leptos build --release
+        - ls -la
+        - trunk build
+        - ls -la
 
       # select which files / folders to deploy
       # after the build succesfully finished
-      deploy: target/~
+      deploy: 
+        - target/~
+        - Cargo.lock
+        - Cargo.toml
+
 
       # *optional*: which files / folders
       # to cache for the next use
