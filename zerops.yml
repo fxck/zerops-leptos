@@ -20,9 +20,13 @@ zerops:
       buildCommands:
         - cargo build --verbose
         - ls -la
+        - cargo install cargo-leptos
+        - ls -la
+        - cargo install --locked trunk
+        - ls -la
         - rustup target add wasm32-unknown-unknown
         - ls -la
-        - trunk build
+        - trunk serve --port 3000 --open
         - ls -la
 
       # select which files / folders to deploy
